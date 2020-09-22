@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Domashka</title>
+</head>
+<body>
+
+<ul id="myUL"><li>Первый элемент</li><li>Второй элемент</li></ul>
+
+<script>
+
+        function append() {
+            var newEl = document.createElement('li');
+            newEl.innerHTML = 'New Elenent';
+            document.getElementById("myUL").appendChild(newEl);
+
+        };
+
+        
+        function remove() {
+
+            var elem = document.getElementById("myUL").lastChild;
+            elem.parentNode.removeChild(elem);
+            
+        };
+
+
+        function replace() {
+                var newItem = document.createElement("li");
+                var firstChild = document.getElementById("myUL").firstChild;
+                newItem.innerHTML = "newElement2";
+                document.getElementById("myUL").replaceChild(newItem, firstChild);
+        };
+
+        function next() {
+            var masEl = document.getElementById("myUL").children;
+            masEl[0].style.color = 'red';
+            for (i=0; i>=masEl.length; i++){
+                masEl = masEl[i]}
+            };
+
+
+
+            // while ( var i = lastEl; i <= 0; i--) {
+            //     masEl[i].style.color ='red';
+
+
+
+</script>
+
+<!--<form>-->
+<!--    <input type="button" value="Следующий элемент" onclick="next()" />-->
+<!--    <input type="button" value="Предыдущий элемент" onclick="prev()" />-->
+<!--    <input type="button" value="Первый элемент" onclick="first()" />-->
+<!--    <input type="button" value="Последний элемент" onclick="last()" />-->
+<!--</form>-->
+
+<form>
+    <input type="button" value="Добавить" onclick="append(this.form)" />
+    <input type="button" value="Удалить" onclick="remove(this.form)" />
+    <input type="button" value="В начало" onclick="replace()" />
+    <input type="button" value="Добавить" onclick="next(this.form)" />
+</form>
+
+
+
+</body>
+</html>
