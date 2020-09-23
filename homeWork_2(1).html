@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Id and classes</title>
+    <style>
+        /* #id1 {
+            color: red;
+        }
+        div.class1 {
+            color: blue;
+            font-size: 14px;
+            text-decoration: underline;
+        } */
+    </style>
+</head>
+<body>
+    <h1 id="id1">Title</h1>
+    <div class="class1" >
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla consequuntur, obcaecati recusandae enim laboriosam eaque, sint incidunt. Perferendis mollitia incidunt blanditiis eveniet, fuga sapiente. Magni dicta maxime fugiat sint soluta?        
+    </div>
+
+    <script>
+        document.getElementById("id1").style.cssText = "background-color: red;margin-top:10px;color:red";
+        var myDiv = document.getElementsByClassName("class1")[0];
+        myDiv.classList.add("newClass");
+        document.getElementsByClassName("newClass")[0].style.cssText = "color:blue;font-size:14px;text-decoration: underline;";
+        console.log(myDiv);
+
+    </script>
+</body>
+</html>
