@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timer</title>
+</head>
+    <body>
+    <h1>my Timer</h1>
+    <button id="btnId1" onclick="start()">START</button>
+    <button id="btnId2" onclick="pause()">pause</button>
+    <button id="btnId3" onclick="stop()">STOP</button>
+    <div id="disp"></div>
+
+    </body>
+
+        <script>
+            var disp = document.getElementById("disp");
+            var btnStart = document.getElementById("btnId1");
+            var btnStop = document.getElementById("btnId2");
+            var count = 0;
+
+            function start() {
+                myVar = setInterval(function(){disp.innerHTML = count++}, 1000);
+
+            }
+
+            function pause() {
+                clearInterval(myVar);
+                console.log('pause');
+            }
+
+            function stop() {
+                clearInterval(myVar);
+                console.log('stop');
+                count = 0;
+                disp.innerHTML = '0';
+            }
+        </script>
+</html>
