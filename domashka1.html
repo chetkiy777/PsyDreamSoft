@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Domashka</title>
+</head>
+<body>
+
+<ul id="myUL"><li>Первый элемент</li><li>Второй элемент</li></ul>
+
+<form>
+    <input type="button" value="Добавить" onclick="append(this.form)"/>
+    <input type="button" value="Удалить" onclick="remove(this.form)"/>
+    <input type="button" value="Последний Элемент" onclick="lastEl(this.form)" /> <br><br>
+    <input type="button" value="В начало" onclick="replace()" /> <br><br>
+    <input type="button" value="Следующий Элемент" onclick="next()" />
+    <input type="button" value="Предыдущий Элемент" onclick="prev(this.form)" />
+</form>
+
+        <script>
+            var i=0
+            var masEl = document.getElementById("myUL").children
+            var l
+
+
+
+
+            function append() {
+                var newEl = document.createElement('li');
+                newEl.innerHTML = 'New Elenent';
+                document.getElementById("myUL").appendChild(newEl);
+            }
+
+            function remove() {
+                var elem = document.getElementById("myUL").lastChild;
+                elem.parentNode.removeChild(elem);
+            }
+
+            function replace() {
+                var newItem = document.createElement("li");
+                    newItem.innerHTML = "new Item"
+                var firstChild = document.getElementById("myUL").firstChild
+                document.getElementById("myUL").replaceChild(newItem, firstChild);
+            }
+
+            function lastEl() {
+                var newItem = document.createElement("li");
+                    newItem.innerHTML = "new Item"
+                var lastChild = document.getElementById("myUL").lastChild
+                document.getElementById("myUL").replaceChild(newItem, lastChild);
+            }
+
+
+            function next() {
+                var firstElem = document.getElementById("myUL").children[i]
+                firstElem.style.color = 'red'
+                i = i + 1
+                document.getElementById("myUL").children[i - 1].previousSibling.style.color = 'black'
+                if (i === masEl.length) {
+                    i = 0
+                }
+            }
+
+            function prev() {
+                i = masEl.length
+                var thisChild = document.getElementById("myUL").children[i]
+                thisChild.style.color = 'red'
+                i = i - 1
+            }
+
+
+
+
+
+
+
+                // function prev() {
+                //     var a = 7;
+                //     console.log(a.length);
+                // }
+
+        </script>
+
+
+
+
+
+</body>
+</html>
