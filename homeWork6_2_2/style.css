@@ -1,0 +1,20 @@
+#main {
+    height: 50px;
+    width: 860px;
+    position: fixed;
+    background: aqua;
+    outline: solid 2px black;
+    position: static;
+
+
+}
+
+#elem {
+    height: 50px;
+    width: 50px;
+    background: red;
+    left: 0px;
+    position: relative;
+
+
+}
