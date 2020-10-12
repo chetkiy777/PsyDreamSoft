@@ -1,0 +1,60 @@
+<!--  Доработайте пример 004_Attr_Tech.html таким образом, чтобы при наведении на span элементы,
+    подсказка сплыва под ними, а не в модальном окне. Используйте addEventListener -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+        <div>
+            <span id="one" data-tooltip="наведите">наведите </span>
+            <span id="two" data-tooltip="для">для </span>
+            <span id="three" data-tooltip="подсказки">подсказки </span>
+        </div>
+
+            <span id="toFirstSpan"> </span>
+            <span id="toSecondSpan"> </span>
+            <span id="toThirdSpan"> </span>
+
+</body>
+    <script>
+        var mainDiv = document.getElementById("main-div");
+        var spanFirst = document.getElementById("toFirstSpan")
+        var secondSpan = document.getElementById("toSecondSpan")
+        var thirdSpan = document.getElementById("toThirdSpan")
+        var one = document.getElementById("one")
+        var two = document.getElementById("two")
+        var three = document.getElementById("three")
+        secondSpan.style.marginLeft = "65px"
+        thirdSpan.style.marginLeft = "25px"
+
+
+
+            one.onmousemove = function () {
+                 spanFirst.innerText = one.innerText
+                    setTimeout( function () {
+                        spanFirst.innerText = " "
+                    } , 1000) }
+
+
+            two.onmousemove = function () {
+                secondSpan.innerText = two.innerText
+                     setTimeout( function () {
+                    secondSpan.innerText = " "
+                    } , 1000) }
+
+            three.onmousemove = function () {
+                thirdSpan.innerText = three.innerText
+                    setTimeout( function () {
+                    thirdSpan.innerText = " "
+                    } , 1000) }
+
+    </script>
+
+
+</html>
